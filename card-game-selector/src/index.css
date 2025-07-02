@@ -5,7 +5,11 @@
 }
 
 body {
-  font-family: 'Comic Sans MS', cursive, sans-serif;
+  /* system font stack for maximum clarity on all devices */
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
+               "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;           /* ensure a solid base size */
+  line-height: 1.6;          /* easier reading flow */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -43,6 +47,17 @@ body {
   padding: 8px;
   border-radius: 50%;
   transition: background-color 0.2s;
+}
+
+.settings-icon.disabled {
+  opacity: 0;
+  cursor: not-allowed;
+}
+
+.settings-icon.disabled:hover,
+.settings-icon.disabled:focus {
+  background-color: transparent; /* no hover feedback */
+  outline: none;
 }
 
 .settings-icon:hover {
@@ -188,7 +203,7 @@ body {
 
 
 .question-text {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #333;
   text-align: center;
   line-height: 1.4;

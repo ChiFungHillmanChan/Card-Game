@@ -81,7 +81,7 @@ function App() {
     return (
       <div className="app home-screen">
         <button 
-          className="settings-icon"
+          className="settings-icon disabled"
           onClick={() => setMusicOn(!musicOn)}
           tabIndex={0}
         >
