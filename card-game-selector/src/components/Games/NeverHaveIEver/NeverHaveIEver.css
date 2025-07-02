@@ -1,0 +1,213 @@
+/* src/components/Games/NeverHaveIEver/neverHaveIEver.css */
+
+.never-have-i-ever-game {
+  background-color: #fffaf0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 20px;
+}
+
+.never-have-i-ever-back-icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.never-have-i-ever-back-icon:hover {
+  background-color: rgba(255, 105, 180, 0.1);
+}
+
+.never-have-i-ever-back-icon:focus {
+  outline: 2px solid #ff69b4;
+}
+
+.never-have-i-ever-game-title {
+  font-size: 2rem;
+  color: #333;
+  margin-top: 80px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.never-have-i-ever-category-bar {
+  display: flex;
+  gap: 10px;
+  padding: 20px;
+  overflow-x: auto;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.never-have-i-ever-category-button {
+  background: white;
+  border: 2px solid #ddd;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: all 0.2s;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.never-have-i-ever-category-button:hover {
+  border-color: #ff69b4;
+  background-color: #fff0f5;
+}
+
+.never-have-i-ever-category-button:focus {
+  outline: 2px solid #007bff;
+}
+
+.never-have-i-ever-category-button.active {
+  background-color: #ff69b4;
+  color: white;
+  border-color: #ff69b4;
+}
+
+.never-have-i-ever-card-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  padding: 20px;
+}
+
+.never-have-i-ever-question-card {
+  background: white;
+  border: 4px solid #ffb6c1;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 350px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  animation: fadeIn 0.4s ease-out;
+}
+
+.never-have-i-ever-question-text {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  line-height: 1.4;
+  margin-bottom: 15px;
+}
+
+.never-have-i-ever-cards-remaining {
+  font-size: 0.9rem;
+  color: #666;
+  font-style: italic;
+}
+
+.never-have-i-ever-next-button {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 12px 30px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-bottom: 30px;
+  font-family: inherit;
+}
+
+.never-have-i-ever-next-button:hover {
+  background-color: #ff1493;
+  transform: scale(1.05);
+}
+
+.never-have-i-ever-next-button:focus {
+  outline: 3px solid #007bff;
+}
+
+.never-have-i-ever-custom-question-section {
+  background: white;
+  border: 2px solid #ffb6c1;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.never-have-i-ever-custom-input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  margin-bottom: 10px;
+}
+
+.never-have-i-ever-custom-input:focus {
+  outline: none;
+  border-color: #ff69b4;
+}
+
+.never-have-i-ever-add-button {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 15px;
+  padding: 8px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.never-have-i-ever-add-button:hover {
+  background-color: #ff1493;
+}
+
+.never-have-i-ever-add-button:focus {
+  outline: 2px solid #007bff;
+}
+
+@keyframes fadeIn {
+   from {
+     opacity: 0;
+     transform: scale(0.95);
+   }
+   to {
+     opacity: 1;
+     transform: scale(1);
+   }
+ }
+
+@media (max-width: 768px) {
+  .never-have-i-ever-game-title {
+    font-size: 1.5rem;
+    margin-top: 60px;
+  }
+
+  .never-have-i-ever-question-card {
+    max-width: 300px;
+    height: 180px;
+  }
+
+  .never-have-i-ever-category-bar {
+    padding: 15px 10px;
+  }
+
+  .never-have-i-ever-custom-question-section {
+    margin: 15px;
+  }
+}
