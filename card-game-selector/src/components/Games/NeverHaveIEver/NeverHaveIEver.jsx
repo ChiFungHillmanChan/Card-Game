@@ -34,7 +34,7 @@ function NeverHaveIEver({ onBack }) {
     'Juicy',
     'Easy',
     'Thought-provoking',
-    'Kid'
+    'Kids'
   ];
 
   // Load questions based on current language
