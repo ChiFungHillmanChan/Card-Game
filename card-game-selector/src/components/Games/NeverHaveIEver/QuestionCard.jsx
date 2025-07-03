@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import './neverHaveIEver.css';
+import './NeverHaveIEver.css';
 
 function QuestionCard({ question, cardsRemaining }) {
   const { t } = useTranslation();

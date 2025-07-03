@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import QuestionCard from './QuestionCard';
 import questionsDataEn from './data/questions_en.json';
 import questionsDataZhHant from './data/questions_zh-Hant.json';
-import './neverHaveIEver.css';
+import './NeverHaveIEver.css';
 
 function shuffleArray(array) {
   const shuffled = [...array];
