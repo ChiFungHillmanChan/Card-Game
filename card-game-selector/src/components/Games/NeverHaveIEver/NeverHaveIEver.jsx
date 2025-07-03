@@ -23,8 +23,10 @@ function NeverHaveIEver({ onBack }) {
   const [newQuestion, setNewQuestion] = useState('');
   const [questions, setQuestions] = useState([]);
   const [questionsData, setQuestionsData] = useState([]);
+  const [animationTrigger, setAnimationTrigger] = useState(0);
 
   const categories = [
+    'All',
     'General',
     'Dating',
     'Funny',
@@ -94,6 +96,10 @@ function NeverHaveIEver({ onBack }) {
 
   const handleNextCard = () => {
     if (questions.length > 0) {
+      // Trigger animation first
+      setAnimationTrigger(prev => prev + 1);
+      
+      // Change card index immediately so the new question is ready
       setCurrentIndex((prev) => (prev + 1) % questions.length);
     }
   };
@@ -115,7 +121,7 @@ function NeverHaveIEver({ onBack }) {
       
       <div className="never-have-i-ever-category-bar">
         {categories.map(cat => {
-          const active = filter.includes(cat);
+          const active = filter.includes(cat) || (filter.includes('All') && cat === 'All');
           return (
             <button
               key={cat}
@@ -132,6 +138,7 @@ function NeverHaveIEver({ onBack }) {
         <QuestionCard 
           question={currentQuestion}
           cardsRemaining={cardsRemaining}
+          animationTrigger={animationTrigger}
         />
         
         {questions.length > 0 && (
