@@ -2,7 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import QuestionCard from './QuestionCard';
-import questionsData from './data/questions.json';
+import questionsDataEn from './data/questions_en.json';
+import questionsDataZhHant from './data/questions_zh-Hant.json';
 import './neverHaveIEver.css';
 
 function shuffleArray(array) {
@@ -15,12 +16,13 @@ function shuffleArray(array) {
 }
 
 function NeverHaveIEver({ onBack }) {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const [filter, setFilter] = useState(['All']);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [ownQuestions, setOwnQuestions] = useState([]);
   const [newQuestion, setNewQuestion] = useState('');
   const [questions, setQuestions] = useState([]);
+  const [questionsData, setQuestionsData] = useState([]);
 
   const categories = [
     'General',
@@ -35,6 +37,24 @@ function NeverHaveIEver({ onBack }) {
     'Kid'
   ];
 
+  // Load questions based on current language
+  useEffect(() => {
+    const loadQuestionsForLanguage = () => {
+      switch (i18n.language) {
+        case 'zh-Hant':
+          setQuestionsData(questionsDataZhHant);
+          break;
+        case 'en':
+        default:
+          setQuestionsData(questionsDataEn);
+          break;
+      }
+    };
+
+    loadQuestionsForLanguage();
+  }, [i18n.language]);
+
+  // Filter and shuffle questions when language, filter, or custom questions change
   useEffect(() => {
     const allQs = [...questionsData, ...ownQuestions];
     const filtered = filter.includes('All')
@@ -43,7 +63,7 @@ function NeverHaveIEver({ onBack }) {
     const shuffled = shuffleArray(filtered);
     setQuestions(shuffled);
     setCurrentIndex(0);
-  }, [filter, ownQuestions]);
+  }, [filter, ownQuestions, questionsData]);
 
   const handleAddQuestion = () => {
     if (newQuestion.trim()) {

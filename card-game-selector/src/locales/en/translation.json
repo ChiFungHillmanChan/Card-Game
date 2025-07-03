@@ -7,12 +7,15 @@
   "categories": {
     "All": "All",
     "General": "General",
-    "Experiences/Adventures": "Experiences/Adventures",
-    "Relationship/Social": "Relationship/Social",
-    "Mischievous/Silly": "Mischievous/Silly",
-    "Personal Growth/Introspection": "Personal Growth/Introspection",
-    "Spicy": "Spicy",
-    "Custom": "Custom"
+    "Dating": "Dating",
+    "Funny": "Funny",
+    "Weird": "Weird",
+    "Safe (ish)": "Safe (ish)",
+    "Sexy": "Sexy",
+    "Juicy": "Juicy",
+    "Easy": "Easy",
+    "Thought-provoking": "Thought-provoking",
+    "Kid": "Kid"
   },
   "noQuestionsAvailable": "No questions available for this category",
   "cardsRemaining": "Cards remaining: {{count}}",
