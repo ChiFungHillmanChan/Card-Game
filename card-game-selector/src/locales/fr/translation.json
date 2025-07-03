@@ -1,0 +1,16 @@
+{
+  "selectGame": "Sélectionner un jeu",
+  "neverHaveIEver": "Action ou Vérité",
+  "addYourOwnQuestion": "Ajoutez votre propre question...",
+  "addQuestion": "Ajouter une question",
+  "nextCard": "Carte suivante",
+  "noQuestionsAvailable": "Aucune question disponible pour cette catégorie",
+  "cardsRemaining": "Cartes restantes : {{count}}",
+  "languages": {
+    "en": "English",
+    "fr": "Français",
+    "zh": "简体中文",
+    "zh-Hant": "繁體中文"
+  },
+  "selectLanguage": "Choisir la langue"
+}

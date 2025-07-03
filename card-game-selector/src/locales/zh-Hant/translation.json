@@ -1,0 +1,30 @@
+{
+  "selectGame": "選擇遊戲",
+  "neverHaveIEver": "我從來沒有",
+  "addYourOwnQuestion": "添加你自己的問題...",
+  "addQuestion": "添加問題",
+  "nextCard": "下一張卡片",
+  "categories": {
+  "All": "全部",
+  "General": "一般",
+  "Dating": "約會",
+  "Funny": "搞笑",
+  "Weird": "奇怪",
+  "Safe (ish)": "安全 (比較？？）",
+  "Sexy": "性感",
+  "Juicy": "勁爆",
+  "Easy": "簡單",
+  "Thought-provoking": "發人深省",
+  "Kid": "兒童",
+  "Custom": "自訂"
+},
+  "noQuestionsAvailable": "此類別沒有可用的問題",
+  "cardsRemaining": "剩餘卡片：{{count}}",
+  "languages": {
+    "en": "English",
+    "fr": "Français",
+    "zh": "简体中文",
+    "zh-Hant": "繁體中文"
+  },
+  "selectLanguage": "選擇語言"
+}

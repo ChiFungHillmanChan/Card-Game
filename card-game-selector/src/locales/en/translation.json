@@ -1,0 +1,26 @@
+{
+  "selectGame": "Select Game",
+  "neverHaveIEver": "Never Have I Ever",
+  "addYourOwnQuestion": "Add your own question...",
+  "addQuestion": "Add Question",
+  "nextCard": "Next Card",
+  "categories": {
+    "All": "All",
+    "General": "General",
+    "Experiences/Adventures": "Experiences/Adventures",
+    "Relationship/Social": "Relationship/Social",
+    "Mischievous/Silly": "Mischievous/Silly",
+    "Personal Growth/Introspection": "Personal Growth/Introspection",
+    "Spicy": "Spicy",
+    "Custom": "Custom"
+  },
+  "noQuestionsAvailable": "No questions available for this category",
+  "cardsRemaining": "Cards remaining: {{count}}",
+  "languages": {
+    "en": "English",
+    "fr": "Français",
+    "zh": "简体中文",
+    "zh-Hant": "繁體中文"
+  },
+  "selectLanguage": "Select Language"
+}

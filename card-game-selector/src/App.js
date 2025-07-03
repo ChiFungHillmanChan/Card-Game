@@ -1,22 +1,21 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import NeverHaveIEver from './components/Games/NeverHaveIEver/NeverHaveIEver';
+import LanguageSelector from './components/LanguageSelector/LanguageSelector';
+import './i18n'; 
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
-  const [musicOn, setMusicOn] = useState(true);
+  const { t } = useTranslation();
 
   if (currentPage === 'home') {
     return (
       <div className="app home-screen">
-        <button 
-          className="settings-icon disabled"
-          onClick={() => setMusicOn(!musicOn)}
-          tabIndex={0}
-        >
-          🎵
-        </button>
+        <div className="language-selector-container">
+          <LanguageSelector />
+        </div>
         
-        <h1 className="title">Select Game</h1>
+        <h1 className="title">{t('selectGame')}</h1>
         
         <div className="games-grid">
           <div 
@@ -29,7 +28,7 @@ function App() {
               }
             }}
           >
-            <h3>Never Have I Ever</h3>
+            <h3>{t('neverHaveIEver')}</h3>
           </div>
         </div>
       </div>

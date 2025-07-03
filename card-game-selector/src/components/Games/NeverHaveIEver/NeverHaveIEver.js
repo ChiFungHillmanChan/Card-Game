@@ -1,7 +1,9 @@
+// src/components/Games/NeverHaveIEver/NeverHaveIEver.js
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import QuestionCard from './QuestionCard';
 import questionsData from './data/questions.json';
-import './NeverHaveIEver.css';
+import './neverHaveIEver.css';
 
 function shuffleArray(array) {
   const shuffled = [...array];
@@ -13,6 +15,7 @@ function shuffleArray(array) {
 }
 
 function NeverHaveIEver({ onBack }) {
+  const { t } = useTranslation();
   const [filter, setFilter] = useState(['All']);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [ownQuestions, setOwnQuestions] = useState([]);
@@ -88,7 +91,7 @@ function NeverHaveIEver({ onBack }) {
         🔙
       </button>
       
-      <h1 className="never-have-i-ever-game-title">Never Have I Ever</h1>
+      <h1 className="never-have-i-ever-game-title">{t('neverHaveIEver')}</h1>
       
       <div className="never-have-i-ever-category-bar">
         {categories.map(cat => {
@@ -99,7 +102,7 @@ function NeverHaveIEver({ onBack }) {
               className={`never-have-i-ever-category-button ${active ? 'active' : ''}`}
               onClick={() => handleCategoryClick(cat)}
             >
-              {cat}
+              {t(`categories.${cat}`)}
             </button>
           );
         })}
@@ -116,7 +119,7 @@ function NeverHaveIEver({ onBack }) {
             className="never-have-i-ever-next-button"
             onClick={handleNextCard}
           >
-            Next Card
+            {t('nextCard')}
           </button>
         )}
       </div>
@@ -125,7 +128,7 @@ function NeverHaveIEver({ onBack }) {
         <input
           type="text"
           className="never-have-i-ever-custom-input"
-          placeholder="Add your own question..."
+          placeholder={t('addYourOwnQuestion')}
           value={newQuestion}
           onChange={(e) => setNewQuestion(e.target.value)}
           onKeyDown={(e) => {
@@ -138,7 +141,7 @@ function NeverHaveIEver({ onBack }) {
           className="never-have-i-ever-add-button"
           onClick={handleAddQuestion}
         >
-          Add Question
+          {t('addQuestion')}
         </button>
       </div>
     </div>

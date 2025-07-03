@@ -1,7 +1,10 @@
 import React from 'react';
-import './NeverHaveIEver.css';
+import { useTranslation } from 'react-i18next';
+import './neverHaveIEver.css';
 
 function QuestionCard({ question, cardsRemaining }) {
+  const { t } = useTranslation();
+
   return (
     <div className="never-have-i-ever-question-card">
       {question ? (
@@ -10,12 +13,12 @@ function QuestionCard({ question, cardsRemaining }) {
             "{question.text}"
           </div>
           <div className="never-have-i-ever-cards-remaining">
-            Cards remaining: {cardsRemaining}
+            {t('cardsRemaining', { count: cardsRemaining })}
           </div>
         </>
       ) : (
         <div className="never-have-i-ever-question-text">
-          No questions available for this category
+          {t('noQuestionsAvailable')}
         </div>
       )}
     </div>

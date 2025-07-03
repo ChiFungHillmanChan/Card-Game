@@ -1,0 +1,16 @@
+{
+  "selectGame": "选择游戏",
+  "neverHaveIEver": "我从来没有",
+  "addYourOwnQuestion": "添加你自己的问题...",
+  "addQuestion": "添加问题",
+  "nextCard": "下一张卡片",
+  "noQuestionsAvailable": "此类别没有可用的问题",
+  "cardsRemaining": "剩余卡片：{{count}}",
+  "languages": {
+    "en": "English",
+    "fr": "Français",
+    "zh": "简体中文",
+    "zh-Hant": "繁體中文"
+  },
+  "selectLanguage": "选择语言"
+}
