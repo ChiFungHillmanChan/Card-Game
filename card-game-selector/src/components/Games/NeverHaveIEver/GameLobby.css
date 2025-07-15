@@ -1,0 +1,327 @@
+/* src/components/Games/NeverHaveIEver/GameLobby.css */
+.game-lobby {
+  background-color: #fffaf0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  position: relative;
+}
+
+.lobby-back-button {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 24px;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 8px;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.lobby-back-button:hover {
+  background-color: rgba(255, 105, 180, 0.1);
+}
+
+.lobby-title {
+  font-size: 2.5rem;
+  color: #333;
+  margin-top: 80px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.lobby-player-input {
+  margin-bottom: 40px;
+}
+
+.lobby-input {
+  width: 300px;
+  padding: 15px;
+  border: 2px solid #ddd;
+  border-radius: 15px;
+  font-family: inherit;
+  font-size: 1.1rem;
+  text-align: center;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.lobby-input:focus {
+  border-color: #ff69b4;
+  box-shadow: 0 0 0 3px rgba(255, 105, 180, 0.2);
+}
+
+.lobby-game-options {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 40px;
+}
+
+.lobby-option-button {
+  background: white;
+  border: 3px solid #ff69b4;
+  border-radius: 20px;
+  padding: 30px;
+  cursor: pointer;
+  transition: all 0.2s;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-family: inherit;
+  outline: none;
+}
+
+.lobby-option-button:hover:not(:disabled) {
+  background-color: #ff69b4;
+  color: white;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 105, 180, 0.3);
+}
+
+.lobby-option-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.option-icon {
+  font-size: 3rem;
+}
+
+.option-text {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.lobby-join-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.game-code-input {
+  font-family: 'Courier New', monospace;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.lobby-join-button {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  outline: none;
+}
+
+.lobby-join-button:hover:not(:disabled) {
+  background-color: #ff1493;
+  transform: scale(1.05);
+}
+
+.lobby-join-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.lobby-game-code {
+  background: white;
+  border: 3px solid #ff69b4;
+  border-radius: 20px;
+  padding: 30px;
+  margin-bottom: 40px;
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.code-label {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.code-value {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #ff69b4;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 3px;
+  margin-bottom: 10px;
+}
+
+.code-instruction {
+  font-size: 0.9rem;
+  color: #888;
+  font-style: italic;
+}
+
+.lobby-players-section {
+  background: white;
+  border: 2px solid #ffb6c1;
+  border-radius: 15px;
+  padding: 25px;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 30px;
+}
+
+.players-title {
+  font-size: 1.3rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.players-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-height: 300px;
+  overflow-y: auto;
+}
+
+.player-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  border: 1px solid #eee;
+}
+
+.player-name {
+  font-weight: bold;
+  color: #333;
+}
+
+.creator-badge {
+  background-color: #ff69b4;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.test-add-player {
+  background-color: #ddd;
+  color: #666;
+  border: none;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.lobby-start-button {
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 15px 50px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+  outline: none;
+  font-weight: bold;
+}
+
+.lobby-start-button:hover:not(:disabled) {
+  background-color: #ff1493;
+  transform: scale(1.05);
+}
+
+.lobby-start-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.waiting-message {
+  font-size: 1.2rem;
+  color: #666;
+  text-align: center;
+  font-style: italic;
+  padding: 20px;
+  background: #f0f0f0;
+  border-radius: 15px;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .game-lobby {
+    padding: 15px;
+  }
+
+  .lobby-title {
+    font-size: 2rem;
+    margin-top: 60px;
+  }
+
+  .lobby-input {
+    width: 280px;
+    padding: 12px;
+  }
+
+  .lobby-game-options {
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+
+  .lobby-option-button {
+    width: 280px;
+    height: 120px;
+    padding: 20px;
+  }
+
+  .option-icon {
+    font-size: 2rem;
+  }
+
+  .option-text {
+    font-size: 1rem;
+  }
+
+  .code-value {
+    font-size: 2rem;
+    letter-spacing: 2px;
+  }
+
+  .lobby-players-section {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .lobby-input {
+    width: 250px;
+  }
+
+  .lobby-option-button {
+    width: 250px;
+    height: 100px;
+    padding: 15px;
+  }
+
+  .code-value {
+    font-size: 1.5rem;
+  }
+}

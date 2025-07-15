@@ -1,6 +1,8 @@
-// src/components/Games/NeverHaveIEver/NeverHaveIEver.js
+// src/components/Games/NeverHaveIEver/NeverHaveIEver.jsx
 import React, { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import GameLobby from './GameLobby';
+import MultiplayerGame from './MultiplayerGame';
 import QuestionCard from './QuestionCard';
 import questionsDataEn from './data/questions_en.json';
 import questionsDataZhHant from './data/questions_zh-Hant.json';
@@ -17,6 +19,10 @@ function shuffleArray(array) {
 
 function NeverHaveIEver({ onBack }) {
   const { t, i18n } = useTranslation();
+  const [gameMode, setGameMode] = useState('select'); // 'select', 'lobby', 'multiplayer', 'solo'
+  const [gameData, setGameData] = useState(null);
+  
+  // Solo game state
   const [filter, setFilter] = useState(['All']);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [ownQuestions, setOwnQuestions] = useState([]);
@@ -56,17 +62,40 @@ function NeverHaveIEver({ onBack }) {
     loadQuestionsForLanguage();
   }, [i18n.language]);
 
-  // Filter and shuffle questions when language, filter, or custom questions change
+  // Filter and shuffle questions when language, filter, or custom questions change (solo mode)
   useEffect(() => {
-    const allQs = [...questionsData, ...ownQuestions];
-    const filtered = filter.includes('All')
-      ? allQs
-      : allQs.filter(q => filter.includes(q.category));
-    const shuffled = shuffleArray(filtered);
-    setQuestions(shuffled);
-    setCurrentIndex(0);
-  }, [filter, ownQuestions, questionsData]);
+    if (gameMode === 'solo') {
+      const allQs = [...questionsData, ...ownQuestions];
+      const filtered = filter.includes('All')
+        ? allQs
+        : allQs.filter(q => filter.includes(q.category));
+      const shuffled = shuffleArray(filtered);
+      setQuestions(shuffled);
+      setCurrentIndex(0);
+    }
+  }, [filter, ownQuestions, questionsData, gameMode]);
 
+  const handleGameModeSelect = (mode) => {
+    setGameMode(mode);
+  };
+
+  const handleStartMultiplayerGame = (data) => {
+    setGameData(data);
+    setGameMode('multiplayer');
+  };
+
+  const handleBackToSelect = () => {
+    setGameMode('select');
+    setGameData(null);
+  };
+
+  const handleBackToMain = () => {
+    setGameMode('select');
+    setGameData(null);
+    onBack();
+  };
+
+  // Solo game functions
   const handleAddQuestion = () => {
     if (newQuestion.trim()) {
       const newQ = { category: 'Custom', text: newQuestion.trim() };
@@ -96,14 +125,69 @@ function NeverHaveIEver({ onBack }) {
 
   const handleNextCard = () => {
     if (questions.length > 0) {
-      // Trigger animation first
       setAnimationTrigger(prev => prev + 1);
-      
-      // Change card index immediately so the new question is ready
       setCurrentIndex((prev) => (prev + 1) % questions.length);
     }
   };
 
+  // Game mode selection screen
+  if (gameMode === 'select') {
+    return (
+      <div className="never-have-i-ever-game">
+        <button 
+          className="never-have-i-ever-back-icon"
+          onClick={handleBackToMain}
+          tabIndex={0}
+        >
+          🔙
+        </button>
+        
+        <h1 className="never-have-i-ever-game-title">{t('neverHaveIEver')}</h1>
+        
+        <div className="game-mode-selection">
+          <button 
+            className="game-mode-button multiplayer"
+            onClick={() => handleGameModeSelect('lobby')}
+          >
+            <div className="mode-icon">👥</div>
+            <div className="mode-title">{t('multiplayerMode')}</div>
+            <div className="mode-description">{t('playWithFriends')}</div>
+          </button>
+          
+          <button 
+            className="game-mode-button solo"
+            onClick={() => handleGameModeSelect('solo')}
+          >
+            <div className="mode-icon">🎲</div>
+            <div className="mode-title">{t('soloMode')}</div>
+            <div className="mode-description">{t('playAlone')}</div>
+          </button>
+        </div>
+      </div>
+    );
+  }
+
+  // Multiplayer lobby
+  if (gameMode === 'lobby') {
+    return (
+      <GameLobby 
+        onStartGame={handleStartMultiplayerGame}
+        onBack={handleBackToSelect}
+      />
+    );
+  }
+
+  // Multiplayer game
+  if (gameMode === 'multiplayer') {
+    return (
+      <MultiplayerGame 
+        gameData={gameData}
+        onBack={handleBackToSelect}
+      />
+    );
+  }
+
+  // Solo game mode (original functionality)
   const cardsRemaining = questions.length > 0 ? questions.length - currentIndex - 1 : 0;
   const currentQuestion = questions[currentIndex];
 
@@ -111,7 +195,7 @@ function NeverHaveIEver({ onBack }) {
     <div className="never-have-i-ever-game">
       <button 
         className="never-have-i-ever-back-icon"
-        onClick={onBack}
+        onClick={handleBackToSelect}
         tabIndex={0}
       >
         🔙

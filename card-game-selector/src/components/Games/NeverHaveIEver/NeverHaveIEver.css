@@ -283,68 +283,6 @@
    }
  }
 
-@media (max-width: 768px) {
-  .never-have-i-ever-game {
-    padding: 15px;
-  }
-
-  .never-have-i-ever-game-title {
-    font-size: 1.5rem;
-    margin-top: 60px;
-  }
-
-  .never-have-i-ever-question-card {
-    max-width: 300px;
-    height: 180px;
-    padding: 15px;
-  }
-
-  .never-have-i-ever-question-text {
-    font-size: 1.1rem;
-  }
-
-  .never-have-i-ever-category-bar {
-    padding: 15px 10px;
-    gap: 8px;
-  }
-
-  .never-have-i-ever-category-button {
-    padding: 10px 14px;
-    font-size: 0.85rem;
-    min-height: 44px; /* Minimum touch target size */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .never-have-i-ever-next-button {
-    padding: 14px 32px;
-    font-size: 1rem;
-    min-height: 44px; /* Minimum touch target size */
-  }
-
-  .never-have-i-ever-add-button {
-    padding: 12px 24px;
-    min-height: 44px; /* Minimum touch target size */
-    width: 100%;
-  }
-
-  .never-have-i-ever-custom-question-section {
-    margin: 15px;
-    padding: 15px;
-  }
-
-  .never-have-i-ever-custom-input {
-    padding: 12px;
-    font-size: 16px; /* Prevent zoom on iOS */
-    min-height: 44px; /* Minimum touch target size */
-  }
-
-  .never-have-i-ever-back-icon {
-    padding: 12px;
-    font-size: 20px;
-  }
-}
 
 @media (max-width: 480px) {
   .never-have-i-ever-category-bar {
